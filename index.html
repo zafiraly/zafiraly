@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Baby ❤️</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 { color: #ff4d6d; font-size: 2.5rem; }
+        p { color: #590d22; font-size: 1.2rem; max-width: 80%; }
+        .buttons { margin-top: 30px; position: relative; width: 300px; height: 100px; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; margin-right: 10px; }
+        #noBtn { background-color: #ffb3c1; color: #590d22; position: absolute; }
+        .heart { color: #ff4d6d; font-size: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="heart">❤️</div>
+    <h1>I'm so sorry, [Nieza]</h1>
+    <p>I messed up, and I hate that I made you upset. Can we please make up? I promise to make it up to you with snacks and hugs.</p>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="forgiven()">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function forgiven() {
+            confetti();
+            document.querySelector('h1').innerHTML = "Yay! You're the best! ❤️";
+            document.querySelector('p').innerHTML = "I'm on my way with your favorite treat.";
+            document.querySelector('.buttons').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
